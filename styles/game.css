@@ -18,6 +18,8 @@
     padding: 1.5rem 2.5rem;
     background-color: #56a5eb;
     color: #fff;
+    width: 8rem;
+    text-align: center;
 }
 
 .choice-text {
@@ -62,4 +64,24 @@
     height: 3.4rem;
     background-color: #56a5eb;
     width: 0%;
+}
+
+/* Loader */
+#loader {
+    border: 1.6rem solid white;
+    border-radius: 50%;
+    border-top: 1.6rem solid #56a5eb;
+    width: 12rem;
+    height: 12rem;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

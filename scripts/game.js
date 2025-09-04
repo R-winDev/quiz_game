@@ -3,6 +3,8 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const ProgressText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
+const loader = document.getElementById("loader");
+const game = document.getElementById("game");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -11,8 +13,8 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 let questions = [];
-
-fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
+// "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+fetch("../questions/grade10/sample.json")
     .then((res) => {
         return res.json();
     })
@@ -48,6 +50,8 @@ let startGame = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+    game.classList.remove("hidden");
+    loader.classList.add("hidden");
 };
 
 let getNewQuestion = () => {
@@ -57,7 +61,7 @@ let getNewQuestion = () => {
         return window.location.assign("/end.html");
     }
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    progressText.innerText = `سوال ${questionCounter}/${MAX_QUESTIONS}`;
     // update the progressbar
     console.log();
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;

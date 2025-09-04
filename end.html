@@ -9,7 +9,10 @@
     <body>
         <div class="container">
             <div class="flex-center flex-column" id="end">
-                <h1 id="finalScore">0</h1>
+                <div class="final-score-wrapper">
+                    <p>امتیاز نهایی شما</p>
+                    <h1 id="finalScore">0</h1>
+                </div>
                 <form>
                     <input type="text" name="username" id="username" placeholder="username" />
                     <button type="submit" class="btn" id="saveCoreBtn" onclick="saveHighScore(event)" disabled>Save</button>
