@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>بازی جغرافی</title>
+    <link rel="stylesheet" href="styles/app.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="home" class="flex-center flex-column">
+            <h1>بازی جغرافی</h1>
+            <div class="select-box flex-center flex-column">
+                <a id="gameStart" class="btn">شروع بازی</a>
+                <a href="/highscores.html" class="btn">بالاترین امتیاز ها</a>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

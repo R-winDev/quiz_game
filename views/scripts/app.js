@@ -183,7 +183,7 @@ startGameBtn.addEventListener("click", function (event) {
     const grade12 = document.querySelector(".grade12");
 
     if (grade10) {
-        grade10.addEventListener("click", function () {
+        grade10.addEventListener("click", function (event) {
             event.preventDefault();
             selectBox.innerHTML = "";
             gradeLessons = grades[0]["lessons"];
