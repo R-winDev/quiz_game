@@ -1,5 +1,6 @@
 const startGameBtn = document.getElementById("gameStart");
 const selectBox = document.querySelector(".select-box");
+const home = document.querySelector("#home");
 
 let grades = [
     {
@@ -176,7 +177,7 @@ startGameBtn.addEventListener("click", function (event) {
     newElem.classList.add("btn");
     newElem.href = "/";
 
-    selectBox.append(newElem);
+    home.append(newElem);
 
     const grade10 = document.querySelector(".grade10");
     const grade11 = document.querySelector(".grade11");
@@ -192,17 +193,10 @@ startGameBtn.addEventListener("click", function (event) {
                 newElem = document.createElement("a");
                 newElem.innerText = lesson.name;
                 newElem.classList.add("btn");
-                newElem.href = `questions/grade10?lesson=${lesson.id}`;
+                newElem.href = `question/grade10?lesson=${lesson.id}`;
 
                 selectBox.append(newElem);
             });
-
-            newElem = document.createElement("a");
-            newElem.innerText = "بازگشت";
-            newElem.classList.add("btn");
-            newElem.href = "/";
-
-            selectBox.append(newElem);
         });
     }
 
@@ -216,17 +210,10 @@ startGameBtn.addEventListener("click", function (event) {
                 newElem = document.createElement("a");
                 newElem.innerText = lesson.name;
                 newElem.classList.add("btn");
-                newElem.href = `questions/grade10?lesson=${lesson.id}`;
+                newElem.href = `question/grade10?lesson=${lesson.id}`;
 
                 selectBox.append(newElem);
             });
-
-            newElem = document.createElement("a");
-            newElem.innerText = "بازگشت";
-            newElem.classList.add("btn");
-            newElem.href = "/";
-
-            selectBox.append(newElem);
         });
     }
 
@@ -240,17 +227,10 @@ startGameBtn.addEventListener("click", function (event) {
                 newElem = document.createElement("a");
                 newElem.innerText = lesson.name;
                 newElem.classList.add("btn");
-                newElem.href = `questions/grade10?lesson=${lesson.id}`;
+                newElem.href = `question/grade10?lesson=${lesson.id}`;
 
                 selectBox.append(newElem);
             });
-
-            newElem = document.createElement("a");
-            newElem.innerText = "بازگشت";
-            newElem.classList.add("btn");
-            newElem.href = "/";
-
-            selectBox.append(newElem);
         });
     }
 });
