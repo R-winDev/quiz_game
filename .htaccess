@@ -1,0 +1,19 @@
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+
+# 1. جلوگیری از دسترسی به فایل‌ها و پوشه‌های حساس
+RewriteRule ^(\.env|vendor|config|storage|composer\.json|composer\.lock) - [F,L,NC]
+
+# 2. اجازه سرو مستقیم برای فایل‌های استاتیک مشخص (اضافه کردن json)
+RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|json)$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 3. همه درخواست‌های دیگه → index.php
+RewriteRule ^ public/index.php [QSA,L]
