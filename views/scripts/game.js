@@ -18,7 +18,7 @@ let availableQuestions = [];
 let questions = [];
 // "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
 
-fetch("../questions/grade10/sample.json")
+fetch(`../questions/grade${urlGrade}/${urlLesson}.json`)
     .then((res) => {
         if (!res.ok) {
             if (res.status === 404) {
